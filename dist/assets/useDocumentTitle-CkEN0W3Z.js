@@ -1,0 +1,1 @@
+import{r as e}from"./react-vendor-glTYHxko.js";import{s as o}from"./index-C5FEvMx2.js";function s(t){e.useEffect(()=>{document.title=t},[t])}function i(t){return`${t} | ${o.name}`}export{i as g,s as u};
