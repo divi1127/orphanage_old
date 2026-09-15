@@ -14,7 +14,7 @@ export default function FAQ() {
       <PageHero
         badge="FAQ"
         title="Frequently Asked Questions"
-        subtitle="Everything you need to know about donating, volunteering, and supporting HopeCare."
+        subtitle="Everything you need to know about donating, volunteering, and supporting Rudra Anandha illam."
         crumb="Home / FAQ"
       />
 

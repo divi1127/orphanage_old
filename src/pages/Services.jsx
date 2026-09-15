@@ -35,7 +35,7 @@ export default function Services() {
       <PageHero
         badge="Our Services"
         title="Care That Goes Beyond Shelter"
-        subtitle="From a warm meal to an education to a listening ear — discover the comprehensive programs that nurture every life at HopeCare."
+        subtitle="From a warm meal to an education to a listening ear — discover the comprehensive programs that nurture every life at Rudra Anandha illam."
         crumb="Home / Services"
       />
 

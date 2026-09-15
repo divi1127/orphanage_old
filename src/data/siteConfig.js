@@ -1,12 +1,13 @@
 export const siteConfig = {
-  name: 'HopeCare Senior Living',
-  shortName: 'HopeCare',
+  name: 'Rudra Anandha illam Senior Citizens Home',
+  shortName: 'Rudra Anandha illam',
   tagline: 'Dignity, Comfort, and Compassionate Care for Seniors',
-  email: 'hello@hopecare.org',
-  phone: '+91 98765 43210',
-  phoneDisplay: '+91 98765 43210',
-  address: '12 Willow Park Road, Green Valley, Mumbai 400001, India',
-  hours: 'Mon - Sun: 24/7 Care',
+  email: '',
+  phone: '+91 95977 15551',
+  phoneDisplay: '+91 95977 15551',
+  address:
+    '47/2, 14-2, Saraswathi Nathi Street, LIC Colony, Viswanathapuram, Mahatma Gandhi Nagar, Madurai, Tamil Nadu 625014',
+  hours: 'Open 24 Hours (Monday to Sunday)',
   social: {
     instagram: 'https://instagram.com',
     facebook: 'https://facebook.com',

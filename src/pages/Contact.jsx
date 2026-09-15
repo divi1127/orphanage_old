@@ -44,8 +44,8 @@ export default function Contact() {
   const contactItems = [
     { icon: MapPin, label: 'Address', value: siteConfig.address },
     { icon: Phone, label: 'Phone', value: siteConfig.phoneDisplay },
-    { icon: Mail, label: 'Email', value: siteConfig.email },
     { icon: Clock, label: 'Working Hours', value: siteConfig.hours },
+    ...(siteConfig.email ? [{ icon: Mail, label: 'Email', value: siteConfig.email }] : []),
   ];
 
   return (

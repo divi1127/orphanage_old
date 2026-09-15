@@ -1,7 +1,7 @@
 export const testimonials = [
   {
     id: 1,
-    text: "Moving my father to HopeCare was the hardest decision, but it turned out to be the best. The staff treats him with so much respect, and his health has visibly improved with their dedicated care.",
+    text: "Moving my father to Rudra Anandha illam was the hardest decision, but it turned out to be the best. The staff treats him with so much respect, and his health has visibly improved with their dedicated care.",
     author: "Meera Reddy",
     role: "Daughter of Resident",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop",
@@ -15,7 +15,7 @@ export const testimonials = [
   },
   {
     id: 3,
-    text: "Volunteering at HopeCare has been a profoundly moving experience. The seniors have so much wisdom to share, and seeing them smile during our music sessions makes my week.",
+    text: "Volunteering at Rudra Anandha illam has been a profoundly moving experience. The seniors have so much wisdom to share, and seeing them smile during our music sessions makes my week.",
     author: "Rohan Gupta",
     role: "Weekend Volunteer",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",

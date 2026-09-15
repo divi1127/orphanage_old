@@ -103,7 +103,7 @@ export default function HeroSequence() {
         <img
           ref={imageRef}
           src="https://i.pinimg.com/1200x/b8/33/69/b833698e0a4c5918645f63df37c85ce8.jpg"
-          alt="Happy elderly people at HopeCare Senior Living"
+          alt="Happy elderly people at Rudra Anandha illam Senior Citizens Home"
           className="w-full h-full object-cover object-center opacity-0"
         />
         <div ref={overlayRef} className="absolute inset-0 bg-[#2c1e16] opacity-50"></div>
@@ -115,7 +115,7 @@ export default function HeroSequence() {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center w-full max-w-4xl px-4 opacity-0"
       >
         <h1 className="text-5xl md:text-8xl font-black mb-6 tracking-tight text-[#fff8f0] drop-shadow-2xl" style={textShadowStyle}>
-          HopeCare Senior Living
+          Rudra Anandha illam Senior Citizens Home
         </h1>
         <p className="text-xl md:text-3xl leading-relaxed text-[#f4ebe1] drop-shadow-xl font-medium" style={subTextShadowStyle}>
           Dignity, Comfort, and Compassionate Care for the Golden Years

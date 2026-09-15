@@ -25,7 +25,7 @@ export const blogs = [
     id: 'combating-senior-isolation',
     title: 'Combating Loneliness: The Power of Community in Senior Living',
     excerpt: 'How communal living, shared activities, and emotional support can eradicate the silent epidemic of senior isolation.',
-    content: `Loneliness is one of the biggest health risks for the elderly, often leading to depression and cognitive decline. At HopeCare, we believe in the healing power of community...`,
+    content: `Loneliness is one of the biggest health risks for the elderly, often leading to depression and cognitive decline. At Rudra Anandha illam, we believe in the healing power of community...`,
     author: 'Rajiv Mehta',
     date: 'July 10, 2026',
     category: 'Community',

@@ -18,7 +18,7 @@ const values = [
 ];
 
 const timeline = [
-  { year: '2015', title: 'Our Humble Beginning', desc: 'HopeCare Senior Living opened its doors with just 15 elderly residents and a single home, driven by a simple belief: everyone deserves a safe haven in their golden years.' },
+  { year: '2015', title: 'Our Humble Beginning', desc: 'Rudra Anandha illam Senior Citizens Home opened its doors with just 15 elderly residents and a single home, driven by a simple belief: everyone deserves a safe haven in their golden years.' },
   { year: '2018', title: 'Medical Wing Expanded', desc: 'We expanded our campus to include a dedicated 24/7 medical and physiotherapy wing for our residents.' },
   { year: '2020', title: 'Memory Care Center', desc: 'Our specialized memory care unit opened, providing structured cognitive support for seniors with dementia and Alzheimer\'s.' },
   { year: '2023', title: 'Reaching 1,000+ Seniors', desc: 'A milestone year as our comprehensive care programs touched over 1,000 senior lives.' },
@@ -58,7 +58,7 @@ export default function About() {
             <div className="overflow-hidden rounded-[2.5rem] shadow-card">
               <img
                 src="https://i.pinimg.com/736x/81/f6/31/81f6314d07631d700e73162b905deb03.jpg"
-                alt="The HopeCare senior community together"
+                alt="The Rudra Anandha illam senior community together"
                 loading="lazy"
                 className="h-[460px] w-full object-cover"
               />
@@ -68,7 +68,7 @@ export default function About() {
             <SectionTitle label="Our Story" title="Honor Every Elder, Celebrate Every Life" align="left" />
             <AnimatedSection className="mt-6 space-y-4 text-charcoal-muted leading-relaxed" direction="up">
               <p>
-                HopeCare Senior Living began in 2015 with fifteen elderly residents, a small house, and a
+                Rudra Anandha illam Senior Citizens Home began in 2015 with fifteen elderly residents, a small house, and a
                 conviction that no senior should face their twilight years in isolation. We started small
                 because that's where meaningful change begins — with one life at a time.
               </p>
@@ -78,7 +78,7 @@ export default function About() {
                 comprehensive care environment where their wisdom is celebrated and their health is prioritized.
               </p>
               <p>
-                Today, HopeCare is a thriving community of seniors, compassionate caregivers, doctors,
+                Today, Rudra Anandha illam is a thriving community of seniors, compassionate caregivers, doctors,
                 and volunteers — all joined by one shared belief: every elderly person deserves love,
                 respect, and the highest quality of life.
               </p>
@@ -183,7 +183,7 @@ export default function About() {
       {/* Leadership */}
       <section className="section-pad">
         <div className="container-x">
-          <SectionTitle label="Leadership" title="The Hearts Behind HopeCare" />
+          <SectionTitle label="Leadership" title="The Hearts Behind Rudra Anandha illam" />
           <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((m, i) => (
               <AnimatedSection key={m.name} direction="up" delay={i * 0.08} className="text-center">

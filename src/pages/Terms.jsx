@@ -45,7 +45,7 @@ export default function Terms() {
       <PageHero
         badge="Legal"
         title="Terms & Conditions"
-        subtitle="The terms governing your use of the HopeCare Foundation website."
+        subtitle="The terms governing your use of the Rudra Anandha illam Senior Citizens Home website."
         crumb="Home / Terms & Conditions"
       />
       <section className="section-pad">

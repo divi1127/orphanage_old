@@ -22,7 +22,7 @@ const supportCards = [
 ];
 
 export default function Home() {
-  useDocumentTitle('HopeCare Senior Living — Dignity, Comfort, and Compassionate Care');
+  useDocumentTitle('Rudra Anandha illam Senior Citizens Home — Dignity, Comfort, and Compassionate Care');
 
   const upcoming = events.filter((e) => e.upcoming).slice(0, 3);
 
@@ -65,7 +65,7 @@ export default function Home() {
             className="mt-6 space-y-4 text-charcoal-muted leading-relaxed text-lg"
           >
             <p>
-              HopeCare Senior Living is a sanctuary for elderly citizens who need a safe,
+              Rudra Anandha illam Senior Citizens Home is a sanctuary for elderly citizens who need a safe,
               caring, and dignified environment. We provide specialized care, medical support,
               and a warm community to ensure our seniors never feel alone.
             </p>
@@ -270,7 +270,7 @@ export default function Home() {
           <SectionTitle
             label="Testimonials"
             title="Voices of Our Community"
-            description="Hear from family members, residents, and volunteers about their experience with HopeCare."
+            description="Hear from family members, residents, and volunteers about their experience with Rudra Anandha illam."
           />
           <div className="mt-12 grid md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (

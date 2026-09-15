@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook, Youtube, Linkedin, Mail, Phone, MapPin, Send, Check } from 'lucide-react';
+import { Instagram, Facebook, Youtube, Linkedin, Mail, Phone, MapPin, Clock, Send, Check } from 'lucide-react';
 import Logo from './Logo';
 import { siteConfig } from '../data/siteConfig';
 
@@ -56,8 +56,8 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Logo light />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
-              We provide a safe, caring and nurturing environment for children and
-              senior citizens, helping them live with dignity, confidence, and hope.
+              We provide a safe, caring and nurturing home for senior citizens,
+              helping them live with dignity, confidence, and hope in their golden years.
             </p>
             <div className="mt-6 space-y-2.5 text-sm text-white/80">
               <p className="flex items-start gap-2.5">
@@ -69,9 +69,15 @@ export default function Footer() {
                 {siteConfig.phoneDisplay}
               </p>
               <p className="flex items-center gap-2.5">
-                <Mail size={16} className="text-golden flex-shrink-0" />
-                {siteConfig.email}
+                <Clock size={16} className="text-golden flex-shrink-0" />
+                {siteConfig.hours}
               </p>
+              {siteConfig.email && (
+                <p className="flex items-center gap-2.5">
+                  <Mail size={16} className="text-golden flex-shrink-0" />
+                  {siteConfig.email}
+                </p>
+              )}
             </div>
           </div>
 

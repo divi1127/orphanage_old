@@ -100,7 +100,7 @@ export default function BlogDetails() {
                   Stories like these are made possible by people like you. Join us today.
                 </p>
                 <Link to="/donation" className="mt-5 inline-flex rounded-full bg-golden px-6 py-3 text-sm font-bold text-forest-dark hover:bg-golden-light transition-colors">
-                  Support HopeCare
+                  Support Rudra Anandha illam
                 </Link>
               </div>
             </div>

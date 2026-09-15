@@ -92,7 +92,7 @@ export default function GetInvolved() {
 
       <CTASection
         title="Ready to Join Our Family?"
-        text="The people of HopeCare are waiting to welcome you. Your help today creates a brighter tomorrow."
+        text="The people of Rudra Anandha illam are waiting to welcome you. Your help today creates a brighter tomorrow."
         primary={{ label: 'Donate Now', props: { to: '/donation' } }}
         secondary={{ label: 'Become a Volunteer', props: { to: '/volunteer' } }}
       />
