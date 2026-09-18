@@ -13,11 +13,11 @@ const sections = [
   },
   {
     title: 'Donations & Payments',
-    body: 'This is a demonstration website. It does not process real donations or payments. Users are encouraged to contact our organization directly for verified donation and payment details before making any contribution.',
+    body: 'Donation details submitted through this website are shared with us on WhatsApp so we can personally confirm the amount. We do not process payments online. Please confirm the official bank account details directly with our team before making any contribution.',
   },
   {
     title: 'Volunteering & Participation',
-    body: 'Volunteer applications and event registrations submitted through this demonstration website are not real submissions. Please contact us directly for official participation procedures and requirements.',
+    body: 'Volunteer applications, event registrations, and contact messages submitted through this website are forwarded to us via WhatsApp so our team can respond to you personally.',
   },
   {
     title: 'Intellectual Property',

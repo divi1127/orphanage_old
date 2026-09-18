@@ -1,6 +1,6 @@
 export const stats = [
-  { value: 1250, suffix: '+', label: 'Seniors Supported' },
-  { value: 4500, suffix: '+', label: 'Therapy Sessions' },
-  { value: 180, suffix: '+', label: 'Active Residents' },
-  { value: 95, suffix: '+', label: 'Dedicated Caregivers' },
+  { value: 174, suffix: '+', label: 'Self Help Groups' },
+  { value: 2556, suffix: '+', label: 'Women Empowered' },
+  { value: 85, suffix: '+', label: 'Awareness Campaigns' },
+  { value: 2021, suffix: '', label: 'Trust Established' },
 ];

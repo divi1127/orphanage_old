@@ -1,3 +1,5 @@
+import mealsImg from '../assets/image1.jpeg';
+
 export const services = [
   {
     id: 'assisted-living',
@@ -26,8 +28,8 @@ export const services = [
     shortDesc: 'Balanced, nutritious meals prepared fresh daily to support senior health.',
     fullDesc: 'Proper nutrition is the foundation of health in old age. Our kitchens prepare balanced, easily digestible meals three times a day, designed by nutritionists to support senior dietary needs and medical restrictions.',
     provides: ['Three balanced meals daily', 'Nutritionist-designed menus', 'Special dietary accommodations', 'Hydration monitoring'],
-    impact: 'Over 500 nutritious, senior-friendly meals served daily.',
-    image: 'https://i.pinimg.com/1200x/bc/17/a2/bc17a25d26e97318550778722e30a2cd.jpg',
+    impact: 'Fresh, senior-friendly meals served daily from our own kitchen.',
+    image: mealsImg,
   },
   {
     id: 'healthcare',

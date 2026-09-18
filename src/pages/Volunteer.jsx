@@ -5,6 +5,7 @@ import AnimatedSection from '../components/AnimatedSection';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import { useDocumentTitle, getPageTitle } from '../hooks/useDocumentTitle';
+import { openWhatsApp, buildLines } from '../utils/whatsapp';
 
 const roles = [
   { icon: Sparkles, title: 'Teaching & Mentoring', desc: 'Tutor children, teach skills, or share your knowledge.' },
@@ -35,6 +36,18 @@ export default function Volunteer() {
     const e = validate();
     setErrors(e);
     if (Object.keys(e).length === 0) {
+      const message = buildLines([
+        'Hello! I would like to volunteer with your organization.',
+        '',
+        'Name: ' + form.name,
+        'Email: ' + form.email,
+        'Phone: ' + (form.phone || '-'),
+        '',
+        'How I can help: ' + form.role,
+        'Availability: ' + (form.time || '-'),
+        'About me: ' + (form.message || '-'),
+      ]);
+      openWhatsApp(message);
       setSubmitted(true);
     }
   };
@@ -114,10 +127,11 @@ export default function Volunteer() {
                 <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-forest/10 text-forest">
                   <UserCheck size={32} />
                 </div>
-                <h3 className="text-2xl font-extrabold">Thank You, {form.name.split(' ')[0] || 'Friend'}!</h3>
+                <h3 className="text-2xl font-extrabold">WhatsApp Opened!</h3>
                 <p className="mt-3 text-charcoal-muted leading-relaxed">
-                  This is a demonstration only — no application was actually sent. Our
-                  volunteer team will share the official application details with you soon.
+                  Thank you, {form.name.split(' ')[0] || 'Friend'}! Your application details
+                  have been sent to our WhatsApp. Please reply in the chat so our volunteer
+                  team can take it forward.
                 </p>
                 <Button onClick={reset} variant="primary" className="mt-7">Submit Another</Button>
               </div>
@@ -179,7 +193,7 @@ export default function Volunteer() {
                     Submit Application
                   </Button>
                   <p className="text-center text-xs text-charcoal-muted">
-                    Demonstration form — no real application is sent.
+                    Your details open in WhatsApp so our team can connect with you.
                   </p>
                 </div>
               </form>

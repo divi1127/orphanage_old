@@ -1,4 +1,4 @@
-import { Heart, GraduationCap, Scale, Users, ShieldCheck, Compass, Eye, Sparkles, HandHeart, BookOpen, Home as HomeIcon, Stethoscope } from 'lucide-react';
+import { Heart, Scale, Users, ShieldCheck, Compass, Eye, Sparkles, HandHeart, Home as HomeIcon, Stethoscope, Banknote, FileCheck, Landmark } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import AnimatedSection from '../components/AnimatedSection';
 import SectionTitle from '../components/SectionTitle';
@@ -6,11 +6,13 @@ import Counter from '../components/Counter';
 import Button from '../components/Button';
 import CTASection from '../components/CTASection';
 import { stats } from '../data/stats';
+import { siteConfig } from '../data/siteConfig';
 import { useDocumentTitle, getPageTitle } from '../hooks/useDocumentTitle';
+import image1 from '../assets/image1.jpeg';
 
 const values = [
-  { icon: Heart, title: 'Compassion', desc: 'We lead with empathy in everything we do.' },
-  { icon: ShieldCheck, title: 'Dignity', desc: 'Every senior is treated with respect and worth.' },
+  { icon: HandHeart, title: 'Empowerment', desc: 'We empower women and seniors to live with dignity and independence.' },
+  { icon: ShieldCheck, title: 'Dignity', desc: 'Every life is treated with respect, irrespective of caste, creed, or religion.' },
   { icon: Heart, title: 'Care', desc: 'Health and well-being are our top priorities.' },
   { icon: Scale, title: 'Equality', desc: 'Every life holds equal value and opportunity.' },
   { icon: Users, title: 'Community', desc: 'We grow stronger when we grow together.' },
@@ -18,25 +20,20 @@ const values = [
 ];
 
 const timeline = [
-  { year: '2015', title: 'Our Humble Beginning', desc: 'Rudra Anandha illam Senior Citizens Home opened its doors with just 15 elderly residents and a single home, driven by a simple belief: everyone deserves a safe haven in their golden years.' },
-  { year: '2018', title: 'Medical Wing Expanded', desc: 'We expanded our campus to include a dedicated 24/7 medical and physiotherapy wing for our residents.' },
-  { year: '2020', title: 'Memory Care Center', desc: 'Our specialized memory care unit opened, providing structured cognitive support for seniors with dementia and Alzheimer\'s.' },
-  { year: '2023', title: 'Reaching 1,000+ Seniors', desc: 'A milestone year as our comprehensive care programs touched over 1,000 senior lives.' },
-  { year: '2026', title: 'A Growing Community', desc: 'Today, we support 1,250+ seniors with a vibrant community of caregivers, doctors, and volunteers.' },
+  { year: '2021', title: 'Rudra Trust Established', desc: 'Rudra Trust was established and duly registered under the Indian Trust Act, 1882. Its journey began with Self Help Group (SHG) activities focused on socio-economic empowerment of women.' },
+  { year: '2022', title: 'Strengthening SHGs', desc: 'In collaboration with PRADAN, trainings and workshops were organized for staff and SHG members — covering auditing, profit distribution, qualitative monitoring, and MIS.' },
+  { year: '2023', title: 'Registered & Growing', desc: 'The Trust obtained its registration (Reg. No. 17/2023) and opened a dedicated Women Empowerment & micro-credit office in Madurai District. SHG cluster formation began.' },
+  { year: '2023-24', title: 'Impact at Scale', desc: '85 awareness campaigns reached 2,556 women across 174 SHGs. Groups began contributing to audit and book-keeping costs — moving steadily toward self-reliance.' },
+  { year: 'Today', title: 'A Loving Home for Seniors', desc: 'Rudra Anandha illam Senior Citizens Home extends the same compassion to our elders — offering care, comfort, dignified living, and a family that never lets them feel alone.' },
 ];
 
-const team = [
-  { name: 'Meera Krishnan', role: 'Founder & Director', photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop' },
-  { name: 'Arjun Mehta', role: 'Facility Manager', photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop' },
-  { name: 'Dr. Sanjay Kumar', role: 'Chief Medical Officer', photo: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop' },
-  { name: 'Priya Sharma', role: 'Senior Care Coordinator', photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop' },
-];
-
-const facilities = [
-  { icon: HomeIcon, title: 'Safe Living Spaces', desc: 'Warm, senior-friendly rooms designed to feel like home.' },
-  { icon: Stethoscope, title: 'On-Site Clinic', desc: 'Medical care, nursing, and checkups available 24/7.' },
-  { icon: Heart, title: 'Physiotherapy Center', desc: 'Dedicated spaces for rehabilitation and mobility exercises.' },
-  { icon: Users, title: 'Recreation Areas', desc: 'Gardens, yoga spaces, and activity halls for socializing.' },
+const registration = [
+  { icon: Landmark, title: 'Trust Name', desc: siteConfig.trustName },
+  { icon: FileCheck, title: 'Legal Status', desc: 'Registered under Indian Trust Act, 1882 (Reg. No. 17/2023)' },
+  { icon: Sparkles, title: 'Established', desc: `Year ${siteConfig.established}` },
+  { icon: Users, title: 'Legal Holder', desc: siteConfig.legalHolder },
+  { icon: Banknote, title: 'Bank', desc: 'IndusInd Bank, Good Shed Street, Madurai — A/C No. 253103202305' },
+  { icon: HomeIcon, title: 'Registered Office', desc: siteConfig.address },
 ];
 
 export default function About() {
@@ -46,8 +43,9 @@ export default function About() {
     <>
       <PageHero
         badge="About Us"
-        title="A Home Built on Love, Care, and Respect"
-        subtitle="For over a decade, we have been a family to senior citizens, restoring dignity, health, and joy to their golden years."
+        title="Care, Empowerment, and a Home That Honors Every Life"
+        titleClassName="text-golden-light"
+        subtitle="Founded in 2021 and registered under the Indian Trust Act, 1882, Rudra Trust serves communities across Madurai — and in its senior care wing, every golden year is lived with dignity and joy."
         crumb="Home / About"
       />
 
@@ -57,7 +55,7 @@ export default function About() {
           <AnimatedSection direction="left" className="relative">
             <div className="overflow-hidden rounded-[2.5rem] shadow-card">
               <img
-                src="https://i.pinimg.com/736x/81/f6/31/81f6314d07631d700e73162b905deb03.jpg"
+                src={image1}
                 alt="The Rudra Anandha illam senior community together"
                 loading="lazy"
                 className="h-[460px] w-full object-cover"
@@ -65,22 +63,24 @@ export default function About() {
             </div>
           </AnimatedSection>
           <div>
-            <SectionTitle label="Our Story" title="Honor Every Elder, Celebrate Every Life" align="left" />
+            <SectionTitle label="Our Story" title="Honor Every Life, Empower Every Family" align="left" />
             <AnimatedSection className="mt-6 space-y-4 text-charcoal-muted leading-relaxed" direction="up">
               <p>
-                Rudra Anandha illam Senior Citizens Home began in 2015 with fifteen elderly residents, a small house, and a
-                conviction that no senior should face their twilight years in isolation. We started small
-                because that's where meaningful change begins — with one life at a time.
+                {siteConfig.trustName} was established in the year {siteConfig.established} and duly
+                registered under the Indian Trust Act. Its vision and mission have always been —
+                <strong> Empowering women to earn a livelihood irrespective of caste, creed, or religion.</strong>
               </p>
               <p>
-                As we grew, we recognized the growing need for specialized care, from assisted living to
-                memory care. So we expanded our facilities, welcoming senior citizens into a
-                comprehensive care environment where their wisdom is celebrated and their health is prioritized.
+                {siteConfig.legalHolder}, the founder trustee of {siteConfig.trustName}, is one of the
+                leading activists of Madurai. Their vision, contribution, and dedicated services
+                have helped hundreds of children and families come up in their life. The Trust began
+                with Self Help Group activities and today focuses on the socio-economic empowerment
+                of women — which ultimately results in the development of families.
               </p>
               <p>
-                Today, Rudra Anandha illam is a thriving community of seniors, compassionate caregivers, doctors,
-                and volunteers — all joined by one shared belief: every elderly person deserves love,
-                respect, and the highest quality of life.
+                Through the same spirit of compassion, {siteConfig.name} is our senior care wing — a
+                thriving community of elders, caregivers, and volunteers joined by one shared belief:
+                every elderly person deserves love, respect, and the highest quality of life.
               </p>
             </AnimatedSection>
           </div>
@@ -98,8 +98,8 @@ export default function About() {
               </div>
               <h3 className="text-2xl font-extrabold">Our Mission</h3>
               <p className="mt-3 text-lg text-charcoal-muted leading-relaxed">
-                To provide unparalleled safety, medical care, and dignity to every senior citizen,
-                so they can live their golden years with confidence and peace.
+                Empowering women to earn a livelihood irrespective of caste, creed, or religion —
+                and providing every senior citizen with safety, care, and dignity in their golden years.
               </p>
             </AnimatedSection>
             <AnimatedSection direction="up" delay={0.1} className="rounded-3xl bg-white p-9 shadow-soft">
@@ -108,8 +108,8 @@ export default function About() {
               </div>
               <h3 className="text-2xl font-extrabold">Our Vision</h3>
               <p className="mt-3 text-lg text-charcoal-muted leading-relaxed">
-                A society where every elderly person is respected, cherished, and has a safe, loving place
-                to call home — a world where no senior is ever left behind.
+                A society where every woman is financially independent, every child is educated, and
+                every elderly person is respected, cherished, and has a safe, loving place to call home.
               </p>
             </AnimatedSection>
           </div>
@@ -122,7 +122,7 @@ export default function About() {
           <SectionTitle
             label="Our Values"
             title="The Principles That Guide Us"
-            description="These are not just words on a wall. They are the values we practice every single day in our caregiving."
+            description="These are not just words on a wall. They are the values we practice every single day in our care and community work."
           />
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((v, i) => (
@@ -148,8 +148,8 @@ export default function About() {
         <div className="container-x">
           <SectionTitle
             label="Our Journey"
-            title="A Decade of Growing Hope"
-            description="From fifteen residents in one home to a thriving community of 1,250+ seniors."
+            title="From Empowering Women to Caring for Senior Citizens"
+            description="A short but deeply meaningful journey — from Self Help Groups to a home for the golden years."
           />
           <div className="relative mt-14">
             <div className="absolute left-5 sm:left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-forest/15" />
@@ -180,23 +180,60 @@ export default function About() {
         </div>
       </section>
 
-      {/* Leadership */}
+      {/* About the Founder */}
       <section className="section-pad">
         <div className="container-x">
-          <SectionTitle label="Leadership" title="The Hearts Behind Rudra Anandha illam" />
-          <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((m, i) => (
-              <AnimatedSection key={m.name} direction="up" delay={i * 0.08} className="text-center">
-                <div className="overflow-hidden rounded-3xl shadow-soft">
-                  <img
-                    src={m.photo}
-                    alt={m.name}
-                    loading="lazy"
-                    className="aspect-square w-full object-cover"
-                  />
+          <SectionTitle label="Founder" title="The Heart Behind the Trust" />
+          <div className="mt-12 grid lg:grid-cols-2 gap-10 items-center">
+            <AnimatedSection direction="left" className="mx-auto w-full max-w-sm">
+              <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-forest to-forest-dark shadow-card">
+                <img
+                  src="/logo.jpg"
+                  alt={`${siteConfig.trustName} logo`}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </AnimatedSection>
+            <AnimatedSection direction="right">
+              <h3 className="text-3xl font-extrabold">{siteConfig.legalHolder} <span className="text-terracotta-dark">·</span> <span className="text-2xl font-bold text-forest">Founder Trustee</span></h3>
+              <p className="mt-4 text-lg text-charcoal-muted leading-relaxed">
+                One of the leading activists of Madurai, {siteConfig.legalHolder} founded {siteConfig.trustName}
+                in {siteConfig.established} with a steadfast vision of empowering women to earn a livelihood
+                irrespective of caste, creed, or religion. Their vision, contribution, and dedicated services
+                have helped hundreds of children and families come up in their life.
+              </p>
+              <p className="mt-4 text-lg text-charcoal-muted leading-relaxed">
+                Under this leadership, the Trust started with Self Help Group activities and today drives
+                the socio-economic empowerment of women across Madurai District — and cares for senior
+                citizens through {siteConfig.name}.
+              </p>
+              <div className="mt-8">
+                <Button to="/get-involved" variant="primary">
+                  Join Our Mission
+                </Button>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Registration Details */}
+      <section className="section-pad bg-cream-alt">
+        <div className="container-x">
+          <SectionTitle
+            label="Trust Information"
+            title="Official Registration & Bank Details"
+            description="Transparency is at the heart of everything we do. Here are the official details of Rudra Trust."
+          />
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {registration.map((r, i) => (
+              <AnimatedSection key={r.title} direction="up" delay={i * 0.06} className="rounded-3xl bg-white p-7 shadow-soft">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-forest/10 text-forest">
+                  <r.icon size={24} />
                 </div>
-                <h3 className="mt-4 font-bold">{m.name}</h3>
-                <p className="text-sm text-terracotta-dark">{m.role}</p>
+                <h3 className="font-bold">{r.title}</h3>
+                <p className="mt-2 text-sm text-charcoal-muted leading-relaxed">{r.desc}</p>
               </AnimatedSection>
             ))}
           </div>
@@ -204,7 +241,7 @@ export default function About() {
       </section>
 
       {/* Facilities */}
-      <section className="section-pad bg-cream-alt">
+      <section className="section-pad">
         <div className="container-x">
           <SectionTitle
             label="Our Facilities"
@@ -212,7 +249,12 @@ export default function About() {
             description="Thoughtfully designed senior-friendly spaces to provide comfort, care, and community."
           />
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {facilities.map((f, i) => (
+            {[
+              { icon: HomeIcon, title: 'Safe Living Spaces', desc: 'Warm, senior-friendly rooms designed to feel like home.' },
+              { icon: Stethoscope, title: 'On-Site Clinic', desc: 'Medical care, nursing, and checkups available 24/7.' },
+              { icon: Heart, title: 'Physiotherapy Center', desc: 'Dedicated spaces for rehabilitation and mobility exercises.' },
+              { icon: Users, title: 'Recreation Areas', desc: 'Gardens, yoga spaces, and activity halls for socializing.' },
+            ].map((f, i) => (
               <AnimatedSection key={f.title} direction="up" delay={i * 0.08} className="rounded-3xl bg-white p-7 shadow-soft">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-forest/10 text-forest">
                   <f.icon size={24} />
@@ -226,12 +268,12 @@ export default function About() {
       </section>
 
       {/* Impact Stats */}
-      <section className="section-pad">
+      <section className="section-pad bg-cream-alt">
         <div className="container-x">
           <SectionTitle label="Our Impact" title="The Numbers Behind Our Care" />
           <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((s, i) => (
-              <AnimatedSection key={s.label} direction="up" delay={i * 0.1} className="rounded-3xl bg-cream p-8 text-center">
+              <AnimatedSection key={s.label} direction="up" delay={i * 0.1} className="rounded-3xl bg-white p-8 text-center shadow-soft">
                 <p className="text-4xl sm:text-5xl font-extrabold text-forest">
                   <Counter value={s.value} suffix={s.suffix} />
                 </p>

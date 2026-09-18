@@ -7,6 +7,7 @@ import Lightbox from '../components/Lightbox';
 import Modal from '../components/Modal';
 import { events } from '../data/events';
 import { useDocumentTitle, getPageTitle } from '../hooks/useDocumentTitle';
+import { openWhatsApp, buildLines } from '../utils/whatsapp';
 
 export default function EventDetails() {
   const { id } = useParams();
@@ -24,6 +25,16 @@ export default function EventDetails() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const message = buildLines([
+      'Hello! I would like to register for the event: ' + event.title,
+      '',
+      'Name: ' + form.name,
+      'Email: ' + form.email,
+      'Phone: ' + (form.phone || '-'),
+      '',
+      'Please confirm my registration.',
+    ]);
+    openWhatsApp(message);
     setSubmitted(true);
   };
 
@@ -66,9 +77,10 @@ export default function EventDetails() {
                   <div>
                     <p className="text-xs uppercase text-charcoal-muted">Date</p>
                     <p className="font-bold">
-                      {new Date(event.date).toLocaleDateString('en-US', {
-                        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
-                      })}
+                      {event.dateText ||
+                        new Date(event.date).toLocaleDateString('en-US', {
+                          weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
+                        })}
                     </p>
                   </div>
                 </div>
@@ -93,9 +105,9 @@ export default function EventDetails() {
               </div>
 
               <h2 className="mt-10 text-2xl font-extrabold">About This Event</h2>
-              <p className="mt-4 leading-relaxed text-charcoal-muted">{event.fullDesc}</p>
+              <p className="mt-4 leading-relaxed text-charcoal-muted">{event.fullDesc || event.description}</p>
 
-              {event.whatToExpect.length > 0 && (
+              {event.whatToExpect?.length > 0 && (
                 <>
                   <h2 className="mt-10 text-2xl font-extrabold">What to Expect</h2>
                   <ul className="mt-4 space-y-2.5">
@@ -109,7 +121,7 @@ export default function EventDetails() {
                 </>
               )}
 
-              {event.gallery.length > 0 && (
+              {event.gallery?.length > 0 && (
                 <>
                   <h2 className="mt-10 text-2xl font-extrabold">Event Gallery</h2>
                   <div className="mt-5 grid grid-cols-3 gap-3">
@@ -144,7 +156,7 @@ export default function EventDetails() {
                 </p>
                 <div className="mt-5 flex items-center gap-2.5 rounded-xl bg-cream p-3 text-sm text-charcoal-muted">
                   <Users size={16} className="text-forest" />
-                  Organized by: {event.organizer}
+                  Organized by: {event.organizer || 'Rudra Trust'}
                 </div>
                 <div className="mt-6">
                   {event.upcoming ? (
@@ -194,7 +206,7 @@ export default function EventDetails() {
       </section>
 
       <Lightbox
-        items={event.gallery.map((g) => ({ id: g, src: g, caption: event.title }))}
+        items={(event.gallery || []).map((g) => ({ id: g, src: g, caption: event.title }))}
         index={lightboxIndex}
         setIndex={(v) => setLightboxIndex(typeof v === 'function' ? v(lightboxIndex) : v)}
         onClose={() => setLightboxIndex(null)}
@@ -206,11 +218,10 @@ export default function EventDetails() {
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-forest/10 text-forest">
               <Check size={32} />
             </div>
-            <h3 id="reg-title" className="text-2xl font-extrabold">Registration Received</h3>
+            <h3 id="reg-title" className="text-2xl font-extrabold">WhatsApp Opened!</h3>
             <p className="mt-3 text-charcoal-muted text-sm leading-relaxed">
-              Thank you, {form.name || 'friend'}! This is a demonstration only — no real
-              registration was sent. Our team will share official registration details
-              soon.
+              Thank you, {form.name || 'friend'}! Your registration details have been sent to
+              our WhatsApp. Please reply in the chat so our team can confirm your spot.
             </p>
             <Button onClick={closeModal} variant="primary" className="mt-6 w-full">
               Done

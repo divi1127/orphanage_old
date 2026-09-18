@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import {
   Heart, BookOpen, UtensilsCrossed, Stethoscope, Users, MessageCircleHeart,
   GraduationCap, Home as HomeIcon, Palette, HandHeart, Check, ArrowRight,
+  Brain, Activity,
 } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import AnimatedSection from '../components/AnimatedSection';
@@ -10,11 +11,13 @@ import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import CTASection from '../components/CTASection';
 import { services } from '../data/services';
+import { siteConfig } from '../data/siteConfig';
 import { useDocumentTitle, getPageTitle } from '../hooks/useDocumentTitle';
+import logoImg from '../assets/logo1.png';
 
 const iconMap = {
   Heart, BookOpen, UtensilsCrossed, Stethoscope, Users, MessageCircleHeart,
-  GraduationCap, Home: HomeIcon, Palette, HandHeart,
+  GraduationCap, Home: HomeIcon, Palette, HandHeart, Brain, Activity,
 };
 
 export default function Services() {
@@ -35,6 +38,7 @@ export default function Services() {
       <PageHero
         badge="Our Services"
         title="Care That Goes Beyond Shelter"
+        titleClassName="text-golden-light"
         subtitle="From a warm meal to an education to a listening ear — discover the comprehensive programs that nurture every life at Rudra Anandha illam."
         crumb="Home / Services"
       />
@@ -59,13 +63,13 @@ export default function Services() {
                 >
                   <AnimatedSection
                     direction={flip ? 'right' : 'left'}
-                    className={`overflow-hidden rounded-[2.5rem] shadow-card ${flip ? 'lg:order-2' : ''}`}
+                    className={`relative h-[340px] sm:h-[400px] overflow-hidden rounded-[2.5rem] bg-cream-alt shadow-card ${flip ? 'lg:order-2' : ''}`}
                   >
                     <img
-                      src={s.image}
-                      alt={s.title}
+                      src={logoImg}
+                      alt={`${siteConfig.name} — ${s.title}`}
                       loading="lazy"
-                      className="h-[340px] sm:h-[400px] w-full object-cover"
+                      className="absolute inset-0 h-full w-full object-contain p-12"
                     />
                   </AnimatedSection>
                   <div className={flip ? 'lg:order-1' : ''}>

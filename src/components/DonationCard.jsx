@@ -35,14 +35,14 @@ export default function DonationCard({ amount, frequency, onContinue }) {
         onClick={onContinue}
         className="mt-6 w-full rounded-full bg-terracotta py-4 text-base font-bold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-terracotta-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2"
       >
-        Proceed to Payment
+        Confirm on WhatsApp
       </button>
 
       <div className="mt-5 flex items-start gap-2.5 rounded-2xl bg-cream p-4 text-xs text-charcoal-muted">
         <ShieldCheck size={16} className="mt-0.5 text-forest flex-shrink-0" />
         <p>
-          This is a demonstration interface. No real payment is processed. Payment
-          details will be integrated with verified official information soon.
+          Your donation details will open in WhatsApp, where our team can discuss and confirm
+          the amount with you. No online payment is needed.
         </p>
       </div>
     </div>

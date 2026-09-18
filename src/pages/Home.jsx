@@ -1,10 +1,12 @@
 import { ArrowRight, Sparkles, HandHeart } from 'lucide-react';
+import { useState } from 'react';
 import Button from '../components/Button';
 import AnimatedSection from '../components/AnimatedSection';
 import SectionTitle from '../components/SectionTitle';
 import Counter from '../components/Counter';
 import ServiceCard from '../components/ServiceCard';
 import EventCard from '../components/EventCard';
+import EventModal from '../components/EventModal';
 import TestimonialCard from '../components/TestimonialCard';
 import CTASection from '../components/CTASection';
 import HeroSequence from '../components/HeroSequence';
@@ -12,6 +14,8 @@ import { stats } from '../data/stats';
 import { services } from '../data/services';
 import { events } from '../data/events';
 import { testimonials } from '../data/testimonials';
+import { weeklyMenu } from '../data/menu';
+import { siteConfig } from '../data/siteConfig';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 const supportCards = [
@@ -23,8 +27,9 @@ const supportCards = [
 
 export default function Home() {
   useDocumentTitle('Rudra Anandha illam Senior Citizens Home — Dignity, Comfort, and Compassionate Care');
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
-  const upcoming = events.filter((e) => e.upcoming).slice(0, 3);
+  const upcoming = events.slice(0, 3);
 
   return (
     <>
@@ -65,14 +70,18 @@ export default function Home() {
             className="mt-6 space-y-4 text-charcoal-muted leading-relaxed text-lg"
           >
             <p>
-              Rudra Anandha illam Senior Citizens Home is a sanctuary for elderly citizens who need a safe,
-              caring, and dignified environment. We provide specialized care, medical support,
-              and a warm community to ensure our seniors never feel alone.
+              {siteConfig.name} is the senior care wing of the {siteConfig.trustName} — a
+              registered Trust established in {siteConfig.established} under the Indian Trust
+              Act, 1882 (Reg. No. 17/2023). Our home is a sanctuary for elderly citizens who
+              need a safe, caring, and dignified environment.
             </p>
             <p>
-              From nutritious, senior-friendly meals and physiotherapy to compassionate memory
-              care and emotional support, every program we run is designed to restore dignity,
-              promote health, and bring joy to their golden years.
+              Led by our founder trustee {siteConfig.legalHolder}, our vision is Empowering every
+              person to live with dignity, warmth, and financial independence — irrespective of
+              caste, creed, or religion. From nutritious, senior-friendly meals and
+              physiotherapy to compassionate memory care and emotional support, every program we
+              run is designed to restore dignity, promote health, and bring joy to their golden
+              years.
             </p>
           </AnimatedSection>
 
@@ -87,7 +96,9 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold">Our Mission</h3>
               <p className="mt-3 text-charcoal-muted leading-relaxed">
-                To provide safety, expert care, and utmost dignity to every senior citizen in our community.
+                To empower women and every senior citizen to earn a livelihood and live with
+                dignity, irrespective of caste, creed, or religion — through care, savings,
+                credit, and livelihood support.
               </p>
             </AnimatedSection>
             <AnimatedSection
@@ -100,7 +111,9 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold">Our Vision</h3>
               <p className="mt-3 text-charcoal-muted leading-relaxed">
-                A society where every elderly person is respected and has a place to call home.
+                A society where every elderly person and every woman is respected, empowered,
+                and has a safe place to call home — with financial autonomy and a community
+                that cares.
               </p>
             </AnimatedSection>
           </div>
@@ -208,6 +221,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* DAILY MENU */}
+      <section className="section-pad bg-forest text-white">
+        <div className="container-x">
+          <SectionTitle
+            label="Nutritious Meals"
+            title="Our Daily Menu"
+            description="Fresh, balanced, and senior-friendly meals prepared three times a day — served every day with love."
+            light
+          />
+
+          {/* Week menu */}
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {weeklyMenu.map((m, i) => (
+              <AnimatedSection
+                key={m.day}
+                direction="up"
+                delay={i * 0.04}
+                className="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10 backdrop-blur"
+              >
+                <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                  <h3 className="text-xl font-extrabold text-white">{m.day}</h3>
+                  <span className="rounded-full bg-golden/15 px-3 py-1 text-sm font-bold text-golden">
+                    {m.dayTa}
+                  </span>
+                </div>
+                <div className="mt-4 space-y-4">
+                  {Object.entries(m.meals).map(([meal, items]) => (
+                    <div key={meal}>
+                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-golden">
+                        {meal}
+                      </p>
+                      <ul className="mt-2 space-y-1.5">
+                        {items.map((item) => (
+                          <li key={item.en} className="flex items-baseline gap-2 text-sm">
+                            <span className="text-white/90">{item.ta}</span>
+                            <span className="text-white/40">·</span>
+                            <span className="text-white/60">{item.en}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* HOW YOUR SUPPORT HELPS */}
       <section className="section-pad bg-cream-alt">
         <div className="container-x">
@@ -248,7 +310,7 @@ export default function Home() {
         <div className="container-x">
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
             <SectionTitle
-              label="Upcoming Events"
+              label="Events & Trainings"
               title="Join Us in Making a Difference"
               align="left"
             />
@@ -258,11 +320,13 @@ export default function Home() {
           </div>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {upcoming.map((e, i) => (
-              <EventCard key={e.id} event={e} index={i} />
+              <EventCard key={e.id} event={e} index={i} onOpen={setSelectedEvent} />
             ))}
           </div>
         </div>
       </section>
+
+      <EventModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
 
       {/* TESTIMONIALS */}
       <section className="section-pad">

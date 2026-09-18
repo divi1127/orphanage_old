@@ -13,7 +13,7 @@ const sections = [
   },
   {
     title: 'Donation & Payment Data',
-    body: 'This website is a demonstration and does not process real payments. When live payment processing is integrated, transaction and payment data will be handled by our verified payment partners in line with applicable data protection laws. We will never store your full payment credentials.',
+    body: 'This website does not process online payments. Donation details you submit are shared with us on WhatsApp so we can personally confirm the amount and share our official bank details. We never ask for or store your full payment credentials.',
   },
   {
     title: 'Data Security',

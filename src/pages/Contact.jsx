@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, Check, MapPinned } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, Check } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import Button from '../components/Button';
 import { siteConfig } from '../data/siteConfig';
 import { useDocumentTitle, getPageTitle } from '../hooks/useDocumentTitle';
+import { openWhatsApp, buildLines } from '../utils/whatsapp';
 
 export default function Contact() {
   useDocumentTitle(getPageTitle('Contact'));
@@ -26,6 +27,17 @@ export default function Contact() {
     const e = validate();
     setErrors(e);
     if (Object.keys(e).length === 0) {
+      const message = buildLines([
+        'Hello ' + siteConfig.trustName + '! You received a message from your website:',
+        '',
+        'Name: ' + form.name,
+        'Email: ' + form.email,
+        'Phone: ' + (form.phone || '-'),
+        '',
+        'Subject: ' + form.subject,
+        'Message: ' + form.message,
+      ]);
+      openWhatsApp(message);
       setSubmitted(true);
     }
   };
@@ -68,25 +80,16 @@ export default function Contact() {
               ))}
             </AnimatedSection>
 
-            {/* Map placeholder */}
+            {/* Google Map */}
             <AnimatedSection direction="up" className="mt-6">
-              <div className="relative overflow-hidden rounded-3xl bg-cream-alt h-72 shadow-soft">
-                <div className="absolute inset-0 grid place-items-center">
-                  <div className="text-center text-charcoal-muted p-6">
-                    <MapPinned size={40} className="mx-auto text-forest" />
-                    <p className="mt-3 font-bold text-charcoal">Map Location</p>
-                    <p className="mt-1 text-sm">Interactive map preview area</p>
-                    <p className="mt-2 text-xs text-charcoal-muted">
-                      A live map will be embedded here without requiring an API key.
-                    </p>
-                  </div>
-                </div>
-                {/* decorative grid lines */}
-                <div className="absolute inset-0 opacity-[0.06]"
-                  style={{
-                    backgroundImage: 'linear-gradient(#174c3c 1px, transparent 1px), linear-gradient(90deg, #174c3c 1px, transparent 1px)',
-                    backgroundSize: '44px 44px',
-                  }}
+              <div className="overflow-hidden rounded-3xl bg-cream-alt h-72 shadow-soft">
+                <iframe
+                  title="Rudra Anandha illam Senior Citizens Home on Google Maps"
+                  src="https://www.google.com/maps?q=Rudra+Anandha+illam+Senior+Citizens+Home&z=16&output=embed"
+                  className="h-full w-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
                 />
               </div>
             </AnimatedSection>
@@ -99,10 +102,10 @@ export default function Contact() {
                 <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-forest/10 text-forest">
                   <Check size={32} />
                 </div>
-                <h3 className="text-2xl font-extrabold">Message Ready to Send</h3>
+                <h3 className="text-2xl font-extrabold">WhatsApp Opened!</h3>
                 <p className="mt-3 text-charcoal-muted leading-relaxed">
-                  This is a demonstration only — no email has actually been sent. In the
-                  live version, we will receive your message and respond shortly.
+                  Your message has been sent to our WhatsApp. Please reply in the chat if you
+                  have any more questions — our team will respond shortly.
                 </p>
                 <div className="mt-7">
                   <Button onClick={reset} variant="primary">Send Another Message</Button>
@@ -143,7 +146,7 @@ export default function Contact() {
                   Send Message
                 </Button>
                 <p className="mt-3 text-center text-xs text-charcoal-muted">
-                  Demonstration form — no real email is sent.
+                  Your details open in WhatsApp so our team can connect with you.
                 </p>
               </form>
             )}

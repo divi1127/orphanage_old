@@ -67,7 +67,7 @@ export default function Lightbox({ items, index, setIndex, onClose }) {
           className="flex max-h-[85vh] max-w-[90vw] flex-col items-center"
         >
           <img
-            src={current.src.replace('w=600', 'w=1400').replace('w=1000', 'w=1400')}
+            src={current.src}
             alt={current.caption}
             className="max-h-[78vh] w-auto rounded-2xl object-contain"
           />

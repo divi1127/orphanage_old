@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight, Calendar } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
@@ -12,14 +11,16 @@ const categoryColors = {
   Volunteers: 'bg-sage/20 text-forest',
 };
 
-export default function EventCard({ event, index = 0 }) {
-  // color fallback
+export default function EventCard({ event, index = 0, onOpen }) {
   const colorClass = categoryColors[event.category] || 'bg-forest/10 text-forest';
 
   return (
     <AnimatedSection direction="up" delay={index * 0.06}>
-      <div
-        className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card cursor-default"
+      <button
+        type="button"
+        onClick={() => onOpen && onOpen(event)}
+        className="group flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card cursor-pointer text-left link-focus"
+        aria-label={`View details for ${event.title}`}
       >
         <div className="relative h-52 overflow-hidden">
           <img
@@ -29,11 +30,12 @@ export default function EventCard({ event, index = 0 }) {
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1.5 text-xs font-bold text-forest backdrop-blur">
-            {new Date(event.date).toLocaleDateString('en-US', {
-              day: 'numeric',
-              month: 'short',
-              year: 'numeric',
-            })}
+            {event.dateText ||
+              new Date(event.date).toLocaleDateString('en-US', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric',
+              })}
           </div>
           <span
             className={`absolute right-4 top-4 rounded-full px-3 py-1 text-xs font-bold ${colorClass}`}
@@ -57,7 +59,7 @@ export default function EventCard({ event, index = 0 }) {
             <ArrowRight size={16} />
           </span>
         </div>
-      </div>
+      </button>
     </AnimatedSection>
   );
 }

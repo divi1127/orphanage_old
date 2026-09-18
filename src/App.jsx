@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Loading from './components/Loading';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -48,6 +49,7 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      <FloatingWhatsApp />
     </BrowserRouter>
   );
 }

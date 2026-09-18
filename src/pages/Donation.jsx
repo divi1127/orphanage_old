@@ -7,6 +7,7 @@ import DonationCard from '../components/DonationCard';
 import Button from '../components/Button';
 import { useDocumentTitle, getPageTitle } from '../hooks/useDocumentTitle';
 import { siteConfig } from '../data/siteConfig';
+import { openWhatsApp, buildLines } from '../utils/whatsapp';
 
 const presets = [500, 1000, 2500, 5000];
 
@@ -36,6 +37,22 @@ export default function Donation() {
 
   const handleContinue = () => {
     if (amount <= 0) return;
+    const message = buildLines([
+      'Hello ' + siteConfig.trustName + '! I would like to donate.',
+      '',
+      'Donor Name: ' + (name || '-'),
+      'Email: ' + (email || '-'),
+      'Phone: ' + (phone || '-'),
+      'PAN: ' + (pan || '-'),
+      'Address: ' + (address || '-'),
+      '',
+      'Amount: Rs. ' + amount.toLocaleString(),
+      'Frequency: ' + (frequency === 'monthly' ? 'Monthly' : 'One Time'),
+      'Purpose: ' + purpose,
+      '',
+      'Please help me confirm this donation.',
+    ]);
+    openWhatsApp(message);
     setShowModal(true);
   };
 
@@ -267,14 +284,15 @@ export default function Donation() {
               <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-forest/10 text-forest">
                 <CheckCircle2 size={36} />
               </div>
-              <h2 className="text-2xl font-extrabold">Thank You!</h2>
+              <h2 className="text-2xl font-extrabold">WhatsApp Opened!</h2>
               <p className="mt-3 text-charcoal-muted leading-relaxed">
-                This is a demonstration. Your intention to donate{' '}
+                Your intention to donate{' '}
                 <span className="font-bold text-forest">
                   ₹{amount.toLocaleString()}
                 </span>{' '}
-                {frequency === 'monthly' ? 'monthly' : 'one-time'} has been
-                registered. Real payment will be enabled with verified details soon.
+                {frequency === 'monthly' ? 'monthly' : 'one-time'} has been sent to our
+                WhatsApp. Please share the amount with our team in the chat and they'll help
+                you complete the donation — no online payment needed.
               </p>
               <div className="mt-7 flex flex-col gap-3">
                 <Button onClick={() => setShowModal(false)} variant="primary">
