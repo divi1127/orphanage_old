@@ -1,4 +1,4 @@
-import mealsImg from '../assets/image1.jpeg';
+
 
 export const services = [
   {
@@ -19,7 +19,7 @@ export const services = [
     fullDesc: 'We understand the unique challenges of memory loss. Our memory care unit offers a secure, calming environment with specialized cognitive therapies designed to maintain mental acuity and provide comfort.',
     provides: ['Cognitive stimulation therapies', 'Secure living environment', 'Specialized trained staff', 'Family support groups', 'Routine-based care'],
     impact: 'Supporting 50+ seniors with specialized memory care.',
-    image: 'https://i.pinimg.com/736x/8e/9e/e1/8e9ee1fe3738fa2b641b6b51658419ea.jpg',
+    image: 'https://i.pinimg.com/1200x/8f/d4/fc/8fd4fc27b2e2d7e94c0252ac8abbb530.jpg',
   },
   {
     id: 'nutritious-meals',
@@ -29,7 +29,7 @@ export const services = [
     fullDesc: 'Proper nutrition is the foundation of health in old age. Our kitchens prepare balanced, easily digestible meals three times a day, designed by nutritionists to support senior dietary needs and medical restrictions.',
     provides: ['Three balanced meals daily', 'Nutritionist-designed menus', 'Special dietary accommodations', 'Hydration monitoring'],
     impact: 'Fresh, senior-friendly meals served daily from our own kitchen.',
-    image: mealsImg,
+    image: 'https://i.pinimg.com/1200x/bc/17/a2/bc17a25d26e97318550778722e30a2cd.jpg',
   },
   {
     id: 'healthcare',
@@ -39,7 +39,7 @@ export const services = [
     fullDesc: 'Access to quality healthcare is a priority. Our on-site medical facilities and partnerships with local hospitals ensure that every resident receives timely medical attention, routine checkups, and chronic disease management.',
     provides: ['Regular health checkups', 'Chronic disease management', 'Emergency care', 'On-call doctors', 'Health awareness camps'],
     impact: '2,000+ medical consultations provided annually to our residents.',
-    image: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=600&h=400&fit=crop',
+    image: 'https://i.pinimg.com/736x/dc/af/c9/dcafc9eb9bad452ab504dd0a94d3a40e.jpg',
   },
   {
     id: 'physiotherapy',
@@ -49,7 +49,7 @@ export const services = [
     fullDesc: 'Our dedicated physiotherapy center helps seniors maintain their mobility, recover from falls or surgeries, and manage arthritis pain. We offer personalized exercises to keep our residents active and pain-free.',
     provides: ['Personalized exercise plans', 'Pain management', 'Post-surgery rehabilitation', 'Fall prevention training', 'Massage therapy'],
     impact: '4,500+ therapy sessions conducted annually.',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop',
+    image: 'https://i.pinimg.com/736x/df/89/cf/df89cf1da0183276fc847b4db29dd6ba.jpg',
   },
   {
     id: 'emotional-support',
